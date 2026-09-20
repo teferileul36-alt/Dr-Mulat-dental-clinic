@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Mulat Speciality Dental Clinic - Addis Ababa</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 flex flex-col min-h-screen">
+
+  <!-- TOP HEADER BAR -->
+  <div class="bg-[#0f2b3c] text-slate-200 text-xs py-2.5 px-4 md:px-8 flex flex-wrap justify-between items-center border-b border-slate-700/50">
+    <div class="flex items-center space-x-6">
+      <span class="flex items-center"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i> Bole Medhaniallem, Near Edna Mall, Addis Ababa</span>
+      <span class="hidden md:flex items-center"><i class="fa-solid fa-clock text-emerald-400 mr-2"></i> Mon - Sat: 8:00 AM - 7:00 PM</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <span class="flex items-center font-mono"><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> +251 91 123 4567</span>
+      <span class="hidden sm:inline font-mono text-slate-400">+251 11 661 0000</span>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-3.5 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="bg-[#2b6cb0] text-white p-3 rounded-2xl shadow-md">
+          <i class="fa-solid fa-tooth text-2xl"></i>
+        </div>
+        <div>
+          <h1 class="font-extrabold text-[#0f2b3c] text-xl leading-none" data-en="Dr. Mulat" data-am="ዶ/ር ሙላት">Dr. Mulat</h1>
+          <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider mt-0.5" data-en="SPECIALITY DENTAL CLINIC" data-am="ልዩ የጥርስ ሕክምና ክሊኒክ">SPECIALITY DENTAL CLINIC</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+        <a href="#about" class="hover:text-[#2b6cb0] transition" data-en="About Us" data-am="ስለ እኛ">About Us</a>
+        <a href="#video" class="hover:text-[#2b6cb0] transition" data-en="Virtual Tour" data-am="ቪዲዮ ጉብኝት">Virtual Tour</a>
+        <a href="#facilities" class="hover:text-[#2b6cb0] transition" data-en="Facilities" data-am="መሣሪያዎች">Facilities</a>
+        <a href="#booking" class="hover:text-[#2b6cb0] transition" data-en="Book Online" data-am="ቀጠሮ ይያዙ">Book Online</a>
+        <a href="#location" class="hover:text-[#2b6cb0] transition" data-en="Location" data-am="አድራሻ">Location</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <!-- Language Switcher -->
+        <button onclick="toggleLanguage('en')" id="btnEn" class="text-xs font-bold text-[#2b6cb0] underline">EN</button>
+        <span class="text-xs text-slate-300">|</span>
+        <button onclick="toggleLanguage('am')" id="btnAm" class="text-xs font-bold text-slate-600 hover:text-[#2b6cb0]">አማርኛ</button>
+
+        <a href="#booking" class="bg-[#2b6cb0] hover:bg-[#235891] text-white text-xs md:text-sm font-bold px-5 py-2.5 rounded-xl shadow-md transition ml-2" data-en="Book Appointment" data-am="ቀጠሮ ይያዙ">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="about" class="bg-gradient-to-b from-[#f0f7ff] to-slate-50 py-16 px-4 md:px-8 text-center border-b border-slate-200/60">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="inline-flex items-center space-x-2 bg-blue-100/80 border border-blue-200 text-[#2b6cb0] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
+        <i class="fa-solid fa-certificate"></i>
+        <span data-en="USA Standard Dental Care in Ethiopia" data-am="በአሜሪካ ስታንዳርድ የተዘጋጀ የጥርስ ሕክምና">USA Standard Dental Care in Ethiopia</span>
+      </div>
+
+      <h2 class="text-4xl md:text-6xl font-black text-[#0f2b3c] leading-tight tracking-tight" data-en="World-Class Dental Care in Addis Ababa" data-am="ከፍተኛ ጥራት ያለው የጥርስ ሕክምና በአዲስ አበባ">
+        World-Class Dental Care in <span class="text-[#2b6cb0]">Addis Ababa</span>
+      </h2>
+
+      <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed" data-en="Advanced painless dentistry, 3D digital smile imaging, and high-precision orthodontic treatments delivered by Senior Consultant Dr. Mulat and team." data-am="በአዲስ አበባ ከፍተኛ ጥራት ያለው የጥርስ ሕክምና፣ በዘመናዊ መሣሪያዎች እና በተረጋገጠ ንጽሕና ዋስትና እንሰጣለን።">
+        Advanced painless dentistry, 3D digital smile imaging, and high-precision orthodontic treatments delivered by Senior Consultant Dr. Mulat and team.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="#booking" class="bg-[#2b8a5e] hover:bg-[#23724d] text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg transition flex items-center space-x-2 text-sm">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span data-en="Schedule Visit" data-am="ቀጠሮ ይያዙ">Schedule Visit</span>
+        </a>
+        <a href="#facilities" class="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold px-7 py-3.5 rounded-2xl shadow-sm transition flex items-center space-x-2 text-sm">
+          <i class="fa-solid fa-stethoscope"></i>
+          <span data-en="Explore Facilities" data-am="ክሊኒካችንን ይመልከቱ">Explore Facilities</span>
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-3 max-w-2xl mx-auto pt-10 border-t border-slate-200/80 mt-10">
+        <div>
+          <h4 class="text-2xl md:text-3xl font-black text-[#0f2b3c]">15+</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-0.5" data-en="Years Experience" data-am="ዓመታት ተሞክሮ">Years Experience</p>
+        </div>
+        <div>
+          <h4 class="text-2xl md:text-3xl font-black text-[#0f2b3c]">12k+</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-0.5" data-en="Happy Smiles" data-am="ደስተኛ ታካሚዎች">Happy Smiles</p>
+        </div>
+        <div>
+          <h4 class="text-2xl md:text-3xl font-black text-[#0f2b3c]">100%</h4>
+          <p class="text-xs text-slate-500 font-semibold mt-0.5" data-en="Sterile Standard" data-am="የተረጋገጠ ንጽሕና">Sterile Standard</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOWCASE SECTION -->
+  <section id="video" class="py-16 px-4 md:px-8 max-w-5xl mx-auto w-full">
+    <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+      <span class="text-[#2b6cb0] font-extrabold text-xs uppercase tracking-wider" data-en="Virtual Experience" data-am="የክሊኒካችን ቪዲዮ">Virtual Experience</span>
+      <h3 class="text-3xl font-extrabold text-[#0f2b3c]" data-en="Take a Look Inside Our Clinic" data-am="የክሊኒካችንን የውስጥ ገጽታ ይመልከቱ">Take a Look Inside Our Clinic</h3>
+      <p class="text-xs sm:text-sm text-slate-500" data-en="Watch our interactive video showcase highlighting our advanced technology and sterile environment." data-am="ዘመናዊ መሣሪያዎቻችንን እና የጸዳውን የሕክምና ክፍል በቪዲዮ ይመልከቱ።">Watch our interactive video showcase highlighting our advanced technology and sterile environment.</p>
+    </div>
+
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 group aspect-video">
+      <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=preview" title="Clinic Tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FACILITIES SECTION -->
+  <section id="facilities" class="py-16 bg-white px-4 md:px-8 border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto space-y-10">
+      <div class="text-center max-w-xl mx-auto space-y-2">
+        <span class="text-emerald-600 font-extrabold text-xs uppercase tracking-wider" data-en="World-Class Care" data-am="ዘመናዊ መሣሪያዎች">World-Class Care</span>
+        <h3 class="text-3xl font-extrabold text-[#0f2b3c]" data-en="Our Advanced Facilities" data-am="የክሊኒካችን የሕክምና ክፍሎች">Our Advanced Facilities</h3>
+        <p class="text-xs sm:text-sm text-slate-500" data-en="Click on any card to view detailed specifications." data-am="ስለ ክፍሎቹ በዝርዝር ለማወቅ ካርዶቹን ይጫኑ።">Click on any card to view detailed specifications.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Facility Card 1 -->
+        <div onclick="openFacilityModal('sterile')" class="bg-slate-50 hover:bg-blue-50/50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition cursor-pointer space-y-3 group shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-blue-100 group-hover:bg-[#2b6cb0] text-[#2b6cb0] group-hover:text-white rounded-xl flex items-center justify-center text-xl transition">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h4 class="font-bold text-lg text-[#0f2b3c]" data-en="Sterile Operating Rooms" data-am="የጸዳ የሕክምና ክፍል">Sterile Operating Rooms</h4>
+          <p class="text-xs text-slate-500 leading-relaxed" data-en="Class-B Autoclaves and medical-grade air filtration guaranteeing 100% sterile instruments." data-am="በከፍተኛ ሙቀት የጸዱ መሣሪያዎች እና የአየር ማጽጃዎች።">Class-B Autoclaves and medical-grade air filtration guaranteeing 100% sterile instruments.</p>
+          <span class="inline-flex items-center text-xs font-bold text-[#2b6cb0] group-hover:underline pt-2">
+            <span data-en="View Details" data-am="ዝርዝር ይመልከቱ">View Details</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+          </span>
+        </div>
+
+        <!-- Facility Card 2 -->
+        <div onclick="openFacilityModal('imaging')" class="bg-slate-50 hover:bg-blue-50/50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition cursor-pointer space-y-3 group shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-blue-100 group-hover:bg-[#2b6cb0] text-[#2b6cb0] group-hover:text-white rounded-xl flex items-center justify-center text-xl transition">
+            <i class="fa-solid fa-[#0f2b3c] fa-x-ray"></i>
+          </div>
+          <h4 class="font-bold text-lg text-[#0f2b3c]" data-en="3D Digital Imaging" data-am="3D የጥርስ ኤክስሬይ">3D Digital Imaging</h4>
+          <p class="text-xs text-slate-500 leading-relaxed" data-en="Low-radiation digital intraoral scanners for immediate diagnostic precision." data-am="ዝቅተኛ የጨረራ መጠን ያለው ፈጣን ዲጂታል ኤክስሬይ።">Low-radiation digital intraoral scanners for immediate diagnostic precision.</p>
+          <span class="inline-flex items-center text-xs font-bold text-[#2b6cb0] group-hover:underline pt-2">
+            <span data-en="View Details" data-am="ዝርዝር ይመልከቱ">View Details</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+          </span>
+        </div>
+
+        <!-- Facility Card 3 -->
+        <div onclick="openFacilityModal('lounge')" class="bg-slate-50 hover:bg-blue-50/50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition cursor-pointer space-y-3 group shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-blue-100 group-hover:bg-[#2b6cb0] text-[#2b6cb0] group-hover:text-white rounded-xl flex items-center justify-center text-xl transition">
+            <i class="fa-solid fa-couch"></i>
+          </div>
+          <h4 class="font-bold text-lg text-[#0f2b3c]" data-en="Comfort Patient Lounge" data-am="የታካሚዎች ማረፊያ">Comfort Patient Lounge</h4>
+          <p class="text-xs text-slate-500 leading-relaxed" data-en="Relaxing executive environment designed to ensure a stress-free visit." data-am="ምቹ እና ዘና የሚያደርግ ማረፊያ ክፍል ለታካሚዎቻችን።">Relaxing executive environment designed to ensure a stress-free visit.</p>
+          <span class="inline-flex items-center text-xs font-bold text-[#2b6cb0] group-hover:underline pt-2">
+            <span data-en="View Details" data-am="ዝርዝር ይመልከቱ">View Details</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONLINE BOOKING FORM -->
+  <section id="booking" class="py-16 px-4 md:px-8 max-w-4xl mx-auto w-full">
+    <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 sm:p-10">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-[#2b6cb0] font-extrabold text-xs uppercase tracking-wider" data-en="Online Appointment" data-am="የመስመር ላይ ቀጠሮ">Online Appointment</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0f2b3c] mt-1" data-en="Book Your Dental Visit" data-am="የቀጠሮ ቅጽ ይሙሉ">Book Your Dental Visit</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1" data-en="Select your service, date, and preferred time slot." data-am="የሚፈልጉትን አገልግሎት፣ ቀን እና ሰዓት ይምረጡ።">Select your service, date, and preferred time slot.</p>
+      </div>
+
+      <form id="patientForm" onsubmit="submitBooking(event)" class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1" data-en="Full Name" data-am="ሙሉ ስም">Full Name</label>
+            <input type="text" id="patientName" required placeholder="e.g. Abebe Kebede" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm font-medium">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1" data-en="Phone Number" data-am="ስልክ ቁጥር">Phone Number</label>
+            <input type="tel" id="patientPhone" required placeholder="+251 91 123 4567" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm font-medium">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1" data-en="Dental Service" data-am="የሕክምና ዓይነት">Dental Service</label>
+          <select id="patientService" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm bg-white font-medium">
+            <option value="General Dental Exam">General Dental Exam / አጠቃላይ የጥርስ ምርመራ</option>
+            <option value="Laser Teeth Whitening">Laser Teeth Whitening / የጥርስ ማጣራት</option>
+            <option value="Root Canal Treatment">Root Canal Treatment / የጥርስ ሥር ሕክምና</option>
+            <option value="Orthodontics / Braces">Orthodontics / የጥርስ ማስተካከያ ካቴና</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1" data-en="Date" data-am="ቀን">Date</label>
+            <input type="date" id="bookingDate" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm font-medium">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1" data-en="Time Slot" data-am="ሰዓት">Time Slot</label>
+            <select id="bookingTime" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm bg-white font-medium">
+              <option value="09:00 AM">09:00 AM / 3:00 ጧት</option>
+              <option value="10:00 AM">10:00 AM / 4:00 ጧት</option>
+              <option value="11:00 AM">11:00 AM / 5:00 ጧት</option>
+              <option value="02:00 PM">02:00 PM / 8:00 ከሰዓት</option>
+              <option value="03:00 PM">03:00 PM / 9:00 ከሰዓት</option>
+              <option value="04:00 PM">04:00 PM / 10:00 ከሰዓት</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-[#2b6cb0] hover:bg-[#235891] text-white font-bold py-3.5 rounded-xl transition shadow-lg text-sm flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span data-en="Confirm Booking Request" data-am="ቀጠሮውን ይላኩ">Confirm Booking Request</span>
+        </button>
+      </form>
+
+      <!-- Status Waiting Box -->
+      <div id="statusBox" class="hidden mt-6 p-4 rounded-2xl border border-blue-200 bg-blue-50 text-center space-y-2">
+        <div class="inline-block animate-spin text-[#2b6cb0] text-2xl">
+          <i class="fa-solid fa-circle-notch"></i>
+        </div>
+        <h4 class="font-extrabold text-[#0f2b3c] text-base" data-en="Booking Sent Successfully!" data-am="ቀጠሮዎ በተሳካ ሁኔታ ተልኳል!">Booking Sent Successfully!</h4>
+        <p class="text-xs text-slate-600 font-medium" data-en="Your request has been sent to reception. Please hold on while your time slot is verified..." data-am="ጥያቄዎ ወደ ሪሴፕሽን ተልኳል። እባክዎን ሰዓቱ እስከሚረጋገጥ ትንሽ ይጠብቁ...">Your request has been sent to reception. Please hold on while your time slot is verified...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT SECTION -->
+  <section id="location" class="py-16 bg-[#0f2b3c] text-white px-4 md:px-8">
+    <div class="max-w-7xl mx-auto space-y-10">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider" data-en="Find Our Clinic" data-am="ክሊኒካችንን ይጎብኙ">Find Our Clinic</span>
+        <h3 class="text-3xl font-extrabold mt-1" data-en="Location & Contact" data-am="የክሊኒኩ አድራሻ እና ስልክ">Location & Contact</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/60 space-y-2">
+          <i class="fa-solid fa-location-dot text-emerald-400 text-2xl"></i>
+          <h4 class="font-bold text-lg" data-en="Address" data-am="አድራሻ">Address</h4>
+          <p class="text-slate-300 text-sm" data-en="Bole Medhaniallem, Near Edna Mall, Addis Ababa, Ethiopia" data-am="ቦሌ መድኃኔዓለም፣ ኤድና ሞል አጠገብ፣ አዲስ አበባ">Bole Medhaniallem, Near Edna Mall, Addis Ababa, Ethiopia</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/60 space-y-2">
+          <i class="fa-solid fa-phone text-emerald-400 text-2xl"></i>
+          <h4 class="font-bold text-lg" data-en="Phone Numbers" data-am="ስልክ ቁጥር">Phone Numbers</h4>
+          <p class="text-slate-300 text-sm font-mono">+251 91 123 4567<br>+251 11 661 0000</p>
+        </div>
+        <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/60 space-y-2">
+          <i class="fa-solid fa-clock text-emerald-400 text-2xl"></i>
+          <h4 class="font-bold text-lg" data-en="Clinic Hours" data-am="የሥራ ሰዓት">Clinic Hours</h4>
+          <p class="text-slate-300 text-sm"><span data-en="Mon - Sat: 8:00 AM – 7:00 PM" data-am="ሰኞ - ቅዳሜ: 2:00 ጧት – 1:00 ምሽት">Mon - Sat: 8:00 AM – 7:00 PM</span><br><span data-en="Sunday: Emergency Only" data-am="እሑድ: ለድንገተኛ ብቻ">Sunday: Emergency Only</span></p>
+        </div>
+      </div>
+
+      <!-- Embedded Google Map -->
+      <div class="rounded-3xl overflow-hidden border border-slate-700 h-72 shadow-2xl">
+        <iframe class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15762.6106676348!2d38.7831!3d8.9984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef03d0001%3A0x7d2cb3782b8813f0!2sBole%20Medhane%20Alem%20Cathedral!5e0!3m2!1sen!2set!4v1710000000000!5m2!1sen!2set" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-6 text-center text-xs border-t border-slate-800 space-y-1">
+    <p>© 2026 Dr. Mulat Speciality Dental Clinic. All Rights Reserved.</p>
+    <p>Bole Medhaniallem, Addis Ababa, Ethiopia</p>
+  </footer>
+
+  <!-- FACILITY DETAIL MODAL -->
+  <div id="facilityModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-white p-6 rounded-3xl shadow-2xl max-w-md w-full space-y-4 border border-slate-100 text-left">
+      <div class="flex justify-between items-center border-b pb-3">
+        <h3 id="facilityTitle" class="text-lg font-extrabold text-[#0f2b3c]"></h3>
+        <button onclick="closeFacilityModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+      </div>
+      <p id="facilityDesc" class="text-xs text-slate-600 leading-relaxed"></p>
+      <button onclick="closeFacilityModal()" class="w-full bg-[#0f2b3c] text-white font-bold py-2.5 rounded-xl text-xs hover:bg-slate-800 transition">
+        Close Window
+      </button>
+    </div>
+  </div>
+
+  <!-- BOOKING STATUS POPUP MODAL -->
+  <div id="resultModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-white p-6 rounded-3xl shadow-2xl max-w-md w-full text-center space-y-4 border border-slate-100">
+      <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto text-3xl"></div>
+      <h3 id="modalTitle" class="text-xl font-extrabold text-slate-900"></h3>
+      <p id="modalMessage" class="text-sm font-medium text-slate-600 leading-relaxed"></p>
+
+      <div id="availableSlotsContainer" class="hidden bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left space-y-2">
+        <span class="block text-xs font-bold text-slate-700 uppercase" data-en="Available Alternative Times:" data-am="ሌሎች ክፍት የሆኑ ሰዓቶች:">Available Alternative Times:</span>
+        <div id="slotsList" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <button onclick="closeModal()" class="w-full bg-[#0f2b3c] text-white font-bold py-3 rounded-xl text-sm hover:bg-slate-800 transition">
+        Close & Continue
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let activeBookingId = null;
+    let pollInterval = null;
+
+    document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
+
+    // Language Toggle Function
+    function toggleLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+
+      if (lang === 'en') {
+        document.getElementById('btnEn').className = "text-xs font-bold text-[#2b6cb0] underline";
+        document.getElementById('btnAm').className = "text-xs font-bold text-slate-600 hover:text-[#2b6cb0]";
+      } else {
+        document.getElementById('btnAm').className = "text-xs font-bold text-[#2b6cb0] underline";
+        document.getElementById('btnEn').className = "text-xs font-bold text-slate-600 hover:text-[#2b6cb0]";
+      }
+    }
+
+    // Interactive Facility Modals
+    function openFacilityModal(type) {
+      const modal = document.getElementById('facilityModal');
+      const title = document.getElementById('facilityTitle');
+      const desc = document.getElementById('facilityDesc');
+
+      if (type === 'sterile') {
+        title.innerText = "Sterile Operating Rooms";
+        desc.innerText = "Our operating rooms feature Class-B European standard autoclaves, UV light sterilization, and negative pressure air filtration systems. All dental tools are individual sterile wrapped and opened right in front of the patient.";
+      } else if (type === 'imaging') {
+        title.innerText = "3D Digital Imaging & Diagnostics";
+        desc.innerText = "We use ultralow-dose 3D Cone Beam Computed Tomography (CBCT) and intraoral scanners to construct high-definition digital 3D models of your teeth and jaw within seconds, ensuring pinpoint accuracy for root canals and braces.";
+      } else if (type === 'lounge') {
+        title.innerText = "Executive Patient Lounge";
+        desc.innerText = "Designed for complete peace of mind, our executive waiting lounge features comfortable seating, complimentary refreshments, quiet ambient lighting, and high-speed Wi-Fi while you wait.";
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeFacilityModal() {
+      document.getElementById('facilityModal').classList.add('hidden');
+    }
+
+    // Submit Booking
+    function submitBooking(e) {
+      e.preventDefault();
+
+      activeBookingId = "BOOK-" + Date.now();
+      const bookingData = {
+        id: activeBookingId,
+        name: document.getElementById('patientName').value,
+        phone: document.getElementById('patientPhone').value,
+        service: document.getElementById('patientService').value,
+        date: document.getElementById('bookingDate').value,
+        time: document.getElementById('bookingTime').value,
+        status: "pending"
+      };
+
+      let currentBookings = JSON.parse(localStorage.getItem('clinic_bookings') || '[]');
+      currentBookings.unshift(bookingData);
+      localStorage.setItem('clinic_bookings', JSON.stringify(currentBookings));
+
+      document.getElementById('statusBox').classList.remove('hidden');
+      startListening();
+    }
+
+    // Real-time Listener for Receptionist Approval
+    function startListening() {
+      if (pollInterval) clearInterval(pollInterval);
+
+      pollInterval = setInterval(() => {
+        let currentBookings = JSON.parse(localStorage.getItem('clinic_bookings') || '[]');
+        let myBooking = currentBookings.find(b => b.id === activeBookingId);
+
+        if (myBooking && myBooking.status !== "pending") {
+          clearInterval(pollInterval);
+          document.getElementById('statusBox').classList.add('hidden');
+          showDecisionPopup(myBooking);
+        }
+      }, 1000);
+    }
+
+    function showDecisionPopup(booking) {
+      const modal = document.getElementById('resultModal');
+      const icon = document.getElementById('modalIcon');
+      const title = document.getElementById('modalTitle');
+      const msg = document.getElementById('modalMessage');
+      const slotsContainer = document.getElementById('availableSlotsContainer');
+
+      if (booking.status === "confirmed") {
+        icon.className = "w-16 h-16 rounded-full flex items-center justify-center mx-auto text-3xl bg-emerald-100 text-emerald-600";
+        icon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        title.innerText = "Booking Confirmed!";
+        title.className = "text-xl font-extrabold text-emerald-900";
+        msg.innerText = "Your appointment is confirmed! Please arrive at least 10 minutes prior to your time.";
+        slotsContainer.classList.add('hidden');
+      } else if (booking.status === "rejected") {
+        icon.className = "w-16 h-16 rounded-full flex items-center justify-center mx-auto text-3xl bg-amber-100 text-amber-600";
+        icon.innerHTML = '<i class="fa-solid fa-calendar-xmark"></i>';
+        title.innerText = "Time Slot Unavailable";
+        title.className = "text-xl font-extrabold text-amber-900";
+        msg.innerText = "This time slot is taken. Please select an open time slot below:";
+
+        const allSlots = ["09:00 AM", "10:00 AM", "11:00 AM", "02:00 PM", "03:00 PM", "04:00 PM"];
+        let takenSlots = JSON.parse(localStorage.getItem('clinic_bookings') || '[]')
+          .filter(b => b.date === booking.date && b.status === "confirmed")
+          .map(b => b.time);
+
+        let openSlots = allSlots.filter(s => !takenSlots.includes(s));
+        const slotsList = document.getElementById('slotsList');
+
+        if (openSlots.length > 0) {
+          slotsList.innerHTML = openSlots.map(s => `
+            <button onclick="selectNewSlot('${s}')" class="bg-white border border-blue-200 text-[#2b6cb0] font-bold px-3 py-1.5 rounded-lg text-xs hover:bg-blue-50">
+              ${s}
+            </button>
+          `).join('');
+        } else {
+          slotsList.innerHTML = `<span class="text-xs text-red-500 font-bold">All slots full for this date.</span>`;
+        }
+        
+        slotsContainer.classList.remove('hidden');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function selectNewSlot(newTime) {
+      document.getElementById('bookingTime').value = newTime;
+      closeModal();
+    }
+
+    function closeModal() {
+      document.getElementById('resultModal').classList.add('hidden');
+      document.getElementById('patientForm').reset();
+    }
+  </script>
+</body>
+</html>
