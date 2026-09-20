@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mulat Speciality Dental Clinic | Addis Ababa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#035485',
+                            900: '#0c2e4e',
+                        },
+                        emeraldAccent: {
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Ethiopic', 'sans-serif'],
+                        amharic: ['Noto Sans Ethiopic', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#0284c7 0.5px, transparent 0.5px), radial-gradient(#0284c7 0.5px, #f8fafc 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4 border-b border-medical-700">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-emerald-400"></i> <span data-i18n="topBarAddress">Bole Medhaniallem, Near Edna Mall, Addis Ababa</span></span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-emerald-400"></i> <span data-i18n="topBarHours">Mon - Sat: 8:00 AM - 7:00 PM</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+251911234567" class="hover:text-emerald-300 transition flex items-center gap-1.5 font-medium"><i class="fa-solid fa-phone text-emerald-400"></i> +251 91 123 4567</a>
+                <a href="tel:+251116610000" class="hover:text-emerald-300 transition hidden sm:flex items-center gap-1.5 font-medium"><i class="fa-solid fa-phone-office text-emerald-400"></i> +251 11 661 0000</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-medical-600 rounded-xl flex items-center justify-center text-white text-2xl shadow-md group-hover:bg-medical-700 transition">
+                    <i class="fa-solid fa-[# tooth] fa-tooth"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg sm:text-xl text-medical-900 leading-tight">Dr. Mulat</h1>
+                    <p class="text-xs font-medium text-emeraldAccent-600 tracking-wide uppercase" data-i18n="clinicSub">Speciality Dental Clinic</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-medical-600 transition" data-i18n="navAbout">About Dr. Mulat</a>
+                <a href="#facilities" class="hover:text-medical-600 transition" data-i18n="navFacilities">Facilities & Tech</a>
+                <a href="#services" class="hover:text-medical-600 transition" data-i18n="navServices">Services & Pricing</a>
+                <a href="#location" class="hover:text-medical-600 transition" data-i18n="navLocation">Location</a>
+            </nav>
+
+            <!-- Language Switcher & Call to Action -->
+            <div class="flex items-center gap-3">
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 text-xs sm:text-sm font-semibold hover:bg-slate-100 transition shadow-sm">
+                    <i class="fa-solid fa-globe text-medical-600"></i>
+                    <span id="langLabel">አማርኛ</span>
+                </button>
+                <a href="#booking" class="hidden sm:inline-flex bg-medical-600 hover:bg-medical-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transition items-center gap-2" data-i18n="btnBookAppointment">
+                    Book Appointment
+                </a>
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-600 hover:text-medical-600 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-medical-600 font-medium" data-i18n="navAbout">About Dr. Mulat</a>
+            <a href="#facilities" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-medical-600 font-medium" data-i18n="navFacilities">Facilities & Tech</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-medical-600 font-medium" data-i18n="navServices">Services & Pricing</a>
+            <a href="#location" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 hover:text-medical-600 font-medium" data-i18n="navLocation">Location</a>
+            <a href="#booking" onclick="toggleMobileMenu()" class="block text-center bg-medical-600 text-white py-2.5 rounded-xl font-semibold text-sm" data-i18n="btnBookAppointment">Book Appointment</a>
+        </div>
+    </header>
+
+    <section class="relative bg-gradient-to-b from-medical-50 via-white to-slate-50 py-16 lg:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-medical-100 text-medical-700 text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-certificate"></i> <span data-i18n="heroBadge">Leading Orthodontic & Dental Care in Ethiopia</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-medical-900 leading-tight">
+                        <span data-i18n="heroTitle1">World-Class Dental Care in</span> 
+                        <span class="text-medical-600 block sm:inline" data-i18n="heroTitle2">Addis Ababa</span>
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0" data-i18n="heroSubtitle">
+                        Advanced painless dentistry, 3D digital smile imaging, and high-precision orthodontic treatments delivered by Senior Consultant Dr. Mulat and team.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#booking" class="bg-emeraldAccent-600 hover:bg-emeraldAccent-500 text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2" data-i18n="heroBtnPrimary">
+                            <i class="fa-regular fa-calendar-check"></i> Schedule Visit
+                        </a>
+                        <a href="#facilities" class="bg-white border-2 border-slate-200 hover:border-medical-600 text-slate-700 hover:text-medical-600 px-7 py-3.5 rounded-xl font-bold text-base shadow-sm transition flex items-center justify-center gap-2" data-i18n="heroBtnSecondary">
+                            <i class="fa-solid fa-microscope"></i> Explore Facilities
+                        </a>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-medical-900">15+</p>
+                            <p class="text-xs text-slate-500 font-medium" data-i18n="statYears">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-medical-900">12k+</p>
+                            <p class="text-xs text-slate-500 font-medium" data-i18n="statPatients">Happy Smiles</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-medical-900">100%</p>
+                            <p class="text-xs text-slate-500 font-medium" data-i18n="statSterile">Sterile Standard</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video / Showcase Frame -->
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Dr. Mulat Speciality Dental Clinic" class="w-full h-80 sm:h-96 object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-medical-900/40 flex items-center justify-center">
+                            <button onclick="openVideoModal()" class="w-20 h-20 bg-white/90 hover:bg-white text-medical-600 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110">
+                                <i class="fa-solid fa-play text-2xl ml-1"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-3.5 rounded-xl text-xs sm:text-sm font-medium text-slate-700 flex items-center justify-between">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-video text-medical-600"></i> <span data-i18n="videoCaption">Take a virtual video tour of our clinic</span></span>
+                            <span class="text-medical-600 font-bold hover:underline cursor-pointer" onclick="openVideoModal()" data-i18n="watchNow">Watch Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-medical-100 rounded-3xl transform -rotate-2"></div>
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. Mulat" class="relative rounded-2xl shadow-xl w-full h-[420px] object-cover">
+                        <div class="absolute -bottom-6 -right-6 bg-medical-600 text-white p-4 rounded-2xl shadow-lg hidden sm:block">
+                            <i class="fa-solid fa-award text-3xl mb-1"></i>
+                            <p class="font-bold text-sm" data-i18n="awardBadge">Certified Specialist</p>
+                            <p class="text-xs text-medical-100">Senior Orthodontist</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 bg-emerald-50 text-emeraldAccent-600 font-semibold text-xs rounded-full uppercase tracking-wider" data-i18n="aboutTag">Doctor Profile</div>
+                    <h2 class="text-3xl font-extrabold text-medical-900" data-i18n="aboutTitle">Dr. Mulat - Senior Consultant Orthodontist & Dental Surgeon</h2>
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="aboutText1">
+                        With over 15 years of dedicated practice in Addis Ababa, Dr. Mulat is recognized as a pioneer in modern aesthetic dentistry, invisible braces (Invisalign), and advanced restorative implantology.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base" data-i18n="aboutText2">
+                        Our clinic brings European-certified sterilization protocols and state-of-the-art diagnostic technology to Bole Medhaniallem, ensuring every patient enjoys a gentle, pain-free experience.
+                    </p>
+
+                    <!-- Key Qualifications -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
+                            <i class="fa-solid fa-user-graduate text-medical-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800" data-i18n="qual1Title">Specialist Training</h4>
+                                <p class="text-xs text-slate-500" data-i18n="qual1Desc">Orthodontics & Maxillofacial Laser Care</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
+                            <i class="fa-solid fa-shield-halved text-emeraldAccent-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800" data-i18n="qual2Title">Sterilization Standard</h4>
+                                <p class="text-xs text-slate-500" data-i18n="qual2Desc">Autoclave Class-B Hygiene Protocols</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openBioModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-xl text-sm font-semibold shadow transition inline-flex items-center gap-2">
+                        <span data-i18n="btnReadBio">Read Full Biography & Awards</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-medical-600 font-bold text-xs uppercase tracking-widest" data-i18n="facilTag">World-Class Equipment</span>
+                <h2 class="text-3xl font-extrabold text-medical-900" data-i18n="facilTitle">Cutting-Edge Dental Technology</h2>
+                <p class="text-slate-600 text-sm sm:text-base" data-i18n="facilSub">We invest in modern equipment to minimize treatment time and guarantee maximum comfort for all our patients.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Facility Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="fac1Title">3D Cone Beam CT Scanning</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed" data-i18n="fac1Desc">Low-radiation high-definition 3D imaging for precise implant placements and root canal diagnostics.</p>
+                    <button onclick="openTechModal('3d')" class="text-xs font-semibold text-medical-600 hover:text-medical-700 flex items-center gap-1" data-i18n="btnLearnMore">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                </div>
+
+                <!-- Facility Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="fac2Title">Laser Dental Therapy</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed" data-i18n="fac2Desc">Painless gum reshaping, whitening, and minimally invasive laser treatment without scalpels.</p>
+                    <button onclick="openTechModal('laser')" class="text-xs font-semibold text-medical-600 hover:text-medical-700 flex items-center gap-1" data-i18n="btnLearnMore">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                </div>
+
+                <!-- Facility Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-syringe"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="fac3Title">Painless Anesthesia</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed" data-i18n="fac3Desc">Computer-controlled local anesthesia delivery ensuring zero pain during tooth extractions and procedures.</p>
+                    <button onclick="openTechModal('anesthesia')" class="text-xs font-semibold text-medical-600 hover:text-medical-700 flex items-center gap-1" data-i18n="btnLearnMore">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                </div>
+
+                <!-- Facility Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-pump-medical"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="fac4Title">Sterilization Suite</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed" data-i18n="fac4Desc">Multi-stage Class B autoclave sterilization guaranteeing 100% infection control for safe dental visits.</p>
+                    <button onclick="openTechModal('sterile')" class="text-xs font-semibold text-medical-600 hover:text-medical-700 flex items-center gap-1" data-i18n="btnLearnMore">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-emeraldAccent-600 font-bold text-xs uppercase tracking-widest" data-i18n="servicesTag">Comprehensive Dental Care</span>
+                <h2 class="text-3xl font-extrabold text-medical-900" data-i18n="servicesTitle">Services & Transparent Pricing</h2>
+                <p class="text-slate-600 text-sm sm:text-base" data-i18n="servicesSub">High standard procedures with clear cost estimations in Ethiopian Birr (ETB).</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-medical-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-medical-50 text-medical-600 rounded-xl text-xl"><i class="fa-solid fa-teeth"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full" data-i18n="s1Price">From 3,500 ETB</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s1Title">Teeth Whitening & Cleaning</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s1Desc">Laser whitening and ultrasonic scaling for a brighter, stain-free smile in a single 45-minute session.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceOption('Teeth Whitening')" class="w-full py-2 bg-slate-100 hover:bg-medical-600 hover:text-white text-slate-700 font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnBookThis">Book Service</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-medical-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-medical-50 text-medical-600 rounded-xl text-xl"><i class="fa-solid fa-tooth"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full" data-i18n="s2Price">Consultation Req.</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s2Title">Orthodontics & Invisalign</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s2Desc">Metal braces, ceramic aesthetic braces, and clear Invisalign aligners supervised directly by Dr. Mulat.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceOption('Orthodontics & Invisalign')" class="w-full py-2 bg-slate-100 hover:bg-medical-600 hover:text-white text-slate-700 font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnBookThis">Book Service</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-medical-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-medical-50 text-medical-600 rounded-xl text-xl"><i class="fa-solid fa-screwdriver"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full" data-i18n="s3Price">From 22,000 ETB</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s3Title">Dental Implants</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s3Desc">Permanent titanium teeth replacement with natural look, full bite strength, and lifetime warranty.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceOption('Dental Implants')" class="w-full py-2 bg-slate-100 hover:bg-medical-600 hover:text-white text-slate-700 font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnBookThis">Book Service</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-medical-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-medical-50 text-medical-600 rounded-xl text-xl"><i class="fa-solid fa-microscope"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full" data-i18n="s4Price">From 4,000 ETB</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s4Title">Painless Root Canal</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s4Desc">Save infected natural teeth with microscopic precision root canal treatment under painless local anesthesia.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceOption('Root Canal')" class="w-full py-2 bg-slate-100 hover:bg-medical-600 hover:text-white text-slate-700 font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnBookThis">Book Service</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="border border-slate-200 rounded-2xl p-6 hover:border-medical-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-medical-50 text-medical-600 rounded-xl text-xl"><i class="fa-solid fa-child"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full" data-i18n="s5Price">From 2,000 ETB</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s5Title">Pediatric Dental Care</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s5Desc">Friendly and gentle dental checks, sealants, and cavity fillings specially tailored for kids.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceOption('Pediatric Dentistry')" class="w-full py-2 bg-slate-100 hover:bg-medical-600 hover:text-white text-slate-700 font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnBookThis">Book Service</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="border border-red-200 bg-red-50/40 rounded-2xl p-6 hover:border-red-400 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-red-100 text-red-600 rounded-xl text-xl"><i class="fa-solid fa-truck-medical"></i></span>
+                            <span class="text-xs font-bold px-2.5 py-1 bg-red-100 text-red-700 rounded-full" data-i18n="s6Price">24/7 Priority</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2" data-i18n="s6Title">Emergency Dental Care</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-4" data-i18n="s6Desc">Immediate relief for acute toothache, broken teeth, or oral trauma. Same-day walk-in priority.</p>
+                    </div>
+                    <a href="tel:+251911234567" class="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-xl transition text-center block" data-i18n="btnEmergencyCall">Call Emergency (+251)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-16 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <!-- Location Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-medical-600 font-bold text-xs uppercase tracking-widest" data-i18n="locTag">Visit Our Clinic</span>
+                        <h2 class="text-3xl font-extrabold text-medical-900 mt-1" data-i18n="locTitle">Conveniently Located in Bole, Addis Ababa</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-medical-600 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm" data-i18n="locAddressTitle">Physical Address</h4>
+                                <p class="text-slate-600 text-sm" data-i18n="locAddressDesc">Bole Medhaniallem Area, Next to Edna Mall, 3rd Floor - Suite 304, Addis Ababa, Ethiopia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-medical-600 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm" data-i18n="locPhoneTitle">Direct Phone Contacts</h4>
+                                <p class="text-slate-600 text-sm">+251 91 123 4567 (Mobile / Telegram)</p>
+                                <p class="text-slate-600 text-sm">+251 11 661 0000 (Reception)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-medical-600 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm" data-i18n="locHoursTitle">Clinic Working Hours</h4>
+                                <p class="text-slate-600 text-sm" data-i18n="locHours1">Monday – Saturday: 8:00 AM – 7:00 PM</p>
+                                <p class="text-slate-600 text-sm" data-i18n="locHours2">Sunday: Emergency Appointments Only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm" data-i18n="mapLandmark">Landmarks Nearby</p>
+                            <p class="text-xs text-slate-500" data-i18n="mapLandmarkSub">Edna Mall, Medhaniallem Church, Harmony Hotel</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="bg-medical-50 text-medical-700 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-medical-100 transition" data-i18n="btnOpenMap">Open Map</a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Frame Simulation -->
+                <div class="lg:col-span-7 h-96 rounded-3xl overflow-hidden shadow-xl border-4 border-white relative">
+                    <iframe 
+                        title="Addis Ababa Clinic Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.548779679267!2d38.7865!3d8.9958!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef0000000%3A0x1000000000000000!2sBole%20Medhane%20Alem%20Cathedral!5e0!3m2!1sen!2set!4v1650000000000!5m2!1sen!2set" 
+                        class="w-full h-full border-0" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-medical-900 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl">
+                <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest" data-i18n="bookTag">Easy Online Reservation</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold" data-i18n="bookTitle">Book Your Dental Consultation</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm" data-i18n="bookSub">Select your preferred dental service and time slot. Our reception team in Addis Ababa will confirm via call/SMS.</p>
+                </div>
+
+                <form id="appointmentForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Patient Name -->
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelName">Full Name *</label>
+                            <input type="text" id="patientName" required placeholder="Abebe Kebede" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 text-sm">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelPhone">Phone Number (+251...) *</label>
+                            <input type="tel" id="patientPhone" required placeholder="+251 91 123 4567" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Select Service -->
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelService">Select Treatment Service *</label>
+                            <select id="patientService" required class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-emerald-400 text-sm">
+                                <option value="" data-i18n="optSelect">-- Choose Service --</option>
+                                <option value="General Checkup">General Dental Checkup</option>
+                                <option value="Teeth Whitening">Teeth Whitening & Scaling</option>
+                                <option value="Orthodontics & Invisalign">Orthodontics / Braces / Invisalign</option>
+                                <option value="Dental Implants">Dental Implants</option>
+                                <option value="Root Canal">Root Canal Therapy</option>
+                                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                            </select>
+                        </div>
+
+                        <!-- Date Selection -->
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelDate">Preferred Date *</label>
+                            <input type="date" id="patientDate" required class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white focus:outline-none focus:border-emerald-400 text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Preferred Time Slot -->
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelTime">Preferred Time Slot *</label>
+                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                            <label class="border border-slate-700 rounded-xl p-2.5 text-center cursor-pointer hover:bg-slate-800 transition">
+                                <input type="radio" name="timeSlot" value="09:00 AM" required class="hidden peer">
+                                <span class="text-xs font-medium peer-checked:text-emerald-400 peer-checked:font-bold">09:00 AM</span>
+                            </label>
+                            <label class="border border-slate-700 rounded-xl p-2.5 text-center cursor-pointer hover:bg-slate-800 transition">
+                                <input type="radio" name="timeSlot" value="11:00 AM" class="hidden peer">
+                                <span class="text-xs font-medium peer-checked:text-emerald-400 peer-checked:font-bold">11:00 AM</span>
+                            </label>
+                            <label class="border border-slate-700 rounded-xl p-2.5 text-center cursor-pointer hover:bg-slate-800 transition">
+                                <input type="radio" name="timeSlot" value="02:30 PM" class="hidden peer">
+                                <span class="text-xs font-medium peer-checked:text-emerald-400 peer-checked:font-bold">02:30 PM</span>
+                            </label>
+                            <label class="border border-slate-700 rounded-xl p-2.5 text-center cursor-pointer hover:bg-slate-800 transition">
+                                <input type="radio" name="timeSlot" value="04:30 PM" class="hidden peer">
+                                <span class="text-xs font-medium peer-checked:text-emerald-400 peer-checked:font-bold">04:30 PM</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Additional Notes -->
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="labelNotes">Additional Notes / Symptoms (Optional)</label>
+                        <textarea id="patientNotes" rows="2" placeholder="Tell us if you have toothache or sensitivity..." class="w-full px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emeraldAccent-600 hover:bg-emeraldAccent-500 text-white py-3.5 rounded-xl font-bold text-base shadow-lg transition flex items-center justify-center gap-2 mt-4" data-i18n="btnConfirmBooking">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Booking Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-medical-900 text-slate-400 py-12 border-t border-medical-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-white font-bold text-lg">
+                        <i class="fa-solid fa-tooth text-emerald-400"></i> Dr. Mulat Dental
+                    </div>
+                    <p class="text-xs leading-relaxed" data-i18n="footerDesc">Providing specialized orthodontic and dental health services in Addis Ababa with highest European sterility standards.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold mb-3" data-i18n="footerQuickLinks">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-white transition" data-i18n="navAbout">About Dr. Mulat</a></li>
+                        <li><a href="#facilities" class="hover:text-white transition" data-i18n="navFacilities">Facilities</a></li>
+                        <li><a href="#services" class="hover:text-white transition" data-i18n="navServices">Services & Pricing</a></li>
+                        <li><a href="#booking" class="hover:text-white transition" data-i18n="btnBookAppointment">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold mb-3" data-i18n="footerContact">Addis Ababa Office</h4>
+                    <p class="text-xs mb-1">Bole Medhaniallem, Edna Mall Area</p>
+                    <p class="text-xs mb-1">+251 91 123 4567</p>
+                    <p class="text-xs">+251 11 661 0000</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold mb-3" data-i18n="footerHours">Hours</h4>
+                    <p class="text-xs mb-1">Mon - Sat: 8:00 AM - 7:00 PM</p>
+                    <p class="text-xs">Sunday: On Call</p>
+                </div>
+            </div>
+            <div class="border-t border-medical-800 pt-6 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Dr. Mulat Speciality Dental Clinic. All Rights Reserved. Addis Ababa, Ethiopia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-black rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl relative">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-white bg-slate-800/80 w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-slate-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="aspect-video w-full">
+                <iframe id="videoIframe" class="w-full h-full" src="" title="Clinic Video Showcase" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Bio Modal -->
+    <div id="bioModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeBioModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-extrabold text-medical-900 mb-2" data-i18n="modalBioTitle">Dr. Mulat Biography & Accreditations</h3>
+            <div class="space-y-4 text-slate-600 text-sm leading-relaxed mt-4">
+                <p data-i18n="modalBioP1">Dr. Mulat completed his Doctorate in Dental Surgery (DDS) with honors, followed by advanced residency training in Orthodontics and Cosmetic Implantology. With over 15 years of surgical excellence in Addis Ababa, he has treated thousands of complex alignment cases and dental restoration procedures.</p>
+                <p data-i18n="modalBioP2">He is a member of the Ethiopian Dental Association (EDA) and actively participates in international continuous orthodontic education forums across Africa and Europe.</p>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-2" data-i18n="modalBioAwardsTitle">Key Awards & Certifications</h4>
+                    <ul class="list-disc list-inside space-y-1 text-xs text-slate-600">
+                        <li data-i18n="award1">Senior Orthodontist Excellence Award – Addis Ababa Health Bureau</li>
+                        <li data-i18n="award2">Certified Invisalign Practitioner Specialist</li>
+                        <li data-i18n="award3">Advanced Laser Dentistry Certification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Tech Modal -->
+    <div id="techModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeTechModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 id="techModalTitle" class="text-xl font-bold text-medical-900 mb-2">Technology Highlight</h3>
+            <p id="techModalDesc" class="text-slate-600 text-sm leading-relaxed mt-3"></p>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeTechModal()" class="bg-medical-600 text-white px-5 py-2 rounded-xl text-xs font-semibold">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language Dictionary (English & Amharic)
+        const i18n = {
+            en: {
+                clinicSub: "Speciality Dental Clinic",
+                topBarAddress: "Bole Medhaniallem, Near Edna Mall, Addis Ababa",
+                topBarHours: "Mon - Sat: 8:00 AM - 7:00 PM",
+                navAbout: "About Dr. Mulat",
+                navFacilities: "Facilities & Tech",
+                navServices: "Services & Pricing",
+                navLocation: "Location",
+                btnBookAppointment: "Book Appointment",
+                heroBadge: "Leading Orthodontic & Dental Care in Ethiopia",
+                heroTitle1: "World-Class Dental Care in",
+                heroTitle2: "Addis Ababa",
+                heroSubtitle: "Advanced painless dentistry, 3D digital smile imaging, and high-precision orthodontic treatments delivered by Senior Consultant Dr. Mulat and team.",
+                heroBtnPrimary: "Schedule Visit",
+                heroBtnSecondary: "Explore Facilities",
+                statYears: "Years Experience",
+                statPatients: "Happy Smiles",
+                statSterile: "Sterile Standard",
+                videoCaption: "Take a virtual video tour of our clinic",
+                watchNow: "Watch Now",
+                awardBadge: "Certified Specialist",
+                aboutTag: "Doctor Profile",
+                aboutTitle: "Dr. Mulat - Senior Consultant Orthodontist & Dental Surgeon",
+                aboutText1: "With over 15 years of dedicated practice in Addis Ababa, Dr. Mulat is recognized as a pioneer in modern aesthetic dentistry, invisible braces (Invisalign), and advanced restorative implantology.",
+                aboutText2: "Our clinic brings European-certified sterilization protocols and state-of-the-art diagnostic technology to Bole Medhaniallem, ensuring every patient enjoys a gentle, pain-free experience.",
+                qual1Title: "Specialist Training",
+                qual1Desc: "Orthodontics & Maxillofacial Laser Care",
+                qual2Title: "Sterilization Standard",
+                qual2Desc: "Autoclave Class-B Hygiene Protocols",
+                btnReadBio: "Read Full Biography & Awards",
+                facilTag: "World-Class Equipment",
+                facilTitle: "Cutting-Edge Dental Technology",
+                facilSub: "We invest in modern equipment to minimize treatment time and guarantee maximum comfort for all our patients.",
+                fac1Title: "3D Cone Beam CT Scanning",
+                fac1Desc: "Low-radiation high-definition 3D imaging for precise implant placements and root canal diagnostics.",
+                fac2Title: "Laser Dental Therapy",
+                fac2Desc: "Painless gum reshaping, whitening, and minimally invasive laser treatment without scalpels.",
+                fac3Title: "Painless Anesthesia",
+                fac3Desc: "Computer-controlled local anesthesia delivery ensuring zero pain during tooth extractions and procedures.",
+                fac4Title: "Sterilization Suite",
+                fac4Desc: "Multi-stage Class B autoclave sterilization guaranteeing 100% infection control for safe dental visits.",
+                btnLearnMore: "Learn More",
+                servicesTag: "Comprehensive Dental Care",
+                servicesTitle: "Services & Transparent Pricing",
+                servicesSub: "High standard procedures with clear cost estimations in Ethiopian Birr (ETB).",
+                s1Title: "Teeth Whitening & Cleaning",
+                s1Price: "From 3,500 ETB",
+                s1Desc: "Laser whitening and ultrasonic scaling for a brighter, stain-free smile in a single 45-minute session.",
+                s2Title: "Orthodontics & Invisalign",
+                s2Price: "Consultation Req.",
+                s2Desc: "Metal braces, ceramic aesthetic braces, and clear Invisalign aligners supervised directly by Dr. Mulat.",
+                s3Title: "Dental Implants",
+                s3Price: "From 22,000 ETB",
+                s3Desc: "Permanent titanium teeth replacement with natural look, full bite strength, and lifetime warranty.",
+                s4Title: "Painless Root Canal",
+                s4Price: "From 4,000 ETB",
+                s4Desc: "Save infected natural teeth with microscopic precision root canal treatment under painless local anesthesia.",
+                s5Title: "Pediatric Dental Care",
+                s5Price: "From 2,000 ETB",
+                s5Desc: "Friendly and gentle dental checks, sealants, and cavity fillings specially tailored for kids.",
+                s6Title: "Emergency Dental Care",
+                s6Price: "24/7 Priority",
+                s6Desc: "Immediate relief for acute toothache, broken teeth, or oral trauma. Same-day walk-in priority.",
+                btnBookThis: "Book Service",
+                btnEmergencyCall: "Call Emergency (+251)",
+                locTag: "Visit Our Clinic",
+                locTitle: "Conveniently Located in Bole, Addis Ababa",
+                locAddressTitle: "Physical Address",
+                locAddressDesc: "Bole Medhaniallem Area, Next to Edna Mall, 3rd Floor - Suite 304, Addis Ababa, Ethiopia.",
+                locPhoneTitle: "Direct Phone Contacts",
+                locHoursTitle: "Clinic Working Hours",
+                locHours1: "Monday – Saturday: 8:00 AM – 7:00 PM",
+                locHours2: "Sunday: Emergency Appointments Only",
+                mapLandmark: "Landmarks Nearby",
+                mapLandmarkSub: "Edna Mall, Medhaniallem Church, Harmony Hotel",
+                btnOpenMap: "Open Map",
+                bookTag: "Easy Online Reservation",
+                bookTitle: "Book Your Dental Consultation",
+                bookSub: "Select your preferred dental service and time slot. Our reception team in Addis Ababa will confirm via call/SMS.",
+                labelName: "Full Name *",
+                labelPhone: "Phone Number (+251...) *",
+                labelService: "Select Treatment Service *",
+                optSelect: "-- Choose Service --",
+                labelDate: "Preferred Date *",
+                labelTime: "Preferred Time Slot *",
+                labelNotes: "Additional Notes / Symptoms (Optional)",
+                btnConfirmBooking: "Submit Booking Request",
+                footerDesc: "Providing specialized orthodontic and dental health services in Addis Ababa with highest European sterility standards.",
+                footerQuickLinks: "Quick Links",
+                footerContact: "Addis Ababa Office",
+                footerHours: "Hours",
+                modalBioTitle: "Dr. Mulat Biography & Accreditations",
+                modalBioP1: "Dr. Mulat completed his Doctorate in Dental Surgery (DDS) with honors, followed by advanced residency training in Orthodontics and Cosmetic Implantology. With over 15 years of surgical excellence in Addis Ababa, he has treated thousands of complex alignment cases and dental restoration procedures.",
+                modalBioP2: "He is a member of the Ethiopian Dental Association (EDA) and actively participates in international continuous orthodontic education forums across Africa and Europe.",
+                modalBioAwardsTitle: "Key Awards & Certifications",
+                award1: "Senior Orthodontist Excellence Award – Addis Ababa Health Bureau",
+                award2: "Certified Invisalign Practitioner Specialist",
+                award3: "Advanced Laser Dentistry Certification"
+            },
+            am: {
+                clinicSub: "የጥርስ ልዩ ክሊኒክ",
+                topBarAddress: "ቦሌ መድኃኔዓለም፣ ኤድና ሞል አጠገብ፣ አዲስ አበባ",
+                topBarHours: "ሰኞ - ቅዳሜ፡ ከጠዋቱ 2:00 - ከሰዓት 1:00",
+                navAbout: "ስለ ဒ/ር ሙላት",
+                navFacilities: "መገልገያዎች እና ቴክኖሎጂ",
+                navServices: "አገልግሎቶች እና ዋጋ",
+                navLocation: "አድራሻችን",
+                btnBookAppointment: "ቀጠሮ ይያዙ",
+                heroBadge: "በኢትዮጵያ ቀዳሚ የኦርቶዶንቲክስ እና ጥርስ ህክምና",
+                heroTitle1: "ዓለም አቀፍ ደረጃውን የጠበቀ ህክምና በ",
+                heroTitle2: "አዲስ አበባ",
+                heroSubtitle: "ዘመናዊ ህመም የሌለው የጥርስ ህክምና፣ የ3D ዲጂታል ፈገግታ እቅድ እና የኦርቶዶንቲክስ ህክምና በከፍተኛ ባለሙያ ဒ/ር ሙላት እና ቡድናቸው።",
+                heroBtnPrimary: "ቀጠሮ ያስይዙ",
+                heroBtnSecondary: "መገልገያዎችን ይመልከቱ",
+                statYears: "ዓመታት ልምድ",
+                statPatients: "ደስተኛ ታካሚዎች",
+                statSterile: "የፀዳ አሰራር",
+                videoCaption: "የክሊኒካችንን የቪዲዮ ጉብኝት ያድርጉ",
+                watchNow: "አሁኑኑ ይመልከቱ",
+                awardBadge: "የተመሰከረለት ባለሙያ",
+                aboutTag: "የሐኪሙ መገለጫ",
+                aboutTitle: "ዶክተር ሙላት - የጥርስ ስፔሻሊስት እና ሰርጀን",
+                aboutText1: "በአዲስ አበባ ውስጥ ከ15 ዓመታት በላይ በላቀ ልምድ የሚታወቁት ዶክተር ሙላት በዘመናዊ የጥርስ ማስተካከል (Invisalign) እና በተከላ ህክምናዎች አቅኚ ናቸው።",
+                aboutText2: "ክሊኒካችን በአውሮፓ የፅዳት ደረጃዎች የተረጋገጠ የመሳሪያዎች ማፅጃ እና የላቀ የዲጂታል ምርመራ ቴክኖሎጂ በቦሌ መድኃኔዓለም አካባቢ ያቀርባል።",
+                qual1Title: "የስፔሻሊስት ስልጠና",
+                qual1Desc: "በኦርቶዶንቲክስ እና በሌዘር ጥርስ ህክምና",
+                qual2Title: "የፅዳት ደረጃ",
+                qual2Desc: "አውቶክሌቭ ክላስ-ቢ 100% የፀዳ አሰራር",
+                btnReadBio: "ሙሉ ታሪካቸውን ያንብቡ",
+                facilTag: "ዘመናዊ መሳሪያዎች",
+                facilTitle: "የላቀ የጥርስ ህክምና ቴክኖሎጂ",
+                facilSub: "የህክምና ጊዜን ለመቀነስ እና ሙሉ ምቾት ለመስጠት በዘመናዊ መሳሪያዎች ታጥቀናል።",
+                fac1Title: "3D Cone Beam CT ስካነር",
+                fac1Desc: "ዝቅተኛ ጨረር ያለው የ3D ምስል ለትክክለኛ የጥርስ ተከላ እና የነርቭ ህክምና።",
+                fac2Title: "የሌዘር ጥርስ ህክምና",
+                fac2Desc: "ህመም የሌለው የድድ ማስተካከል እና የጥርስ ማንጣት በሌዘር።",
+                fac3Title: "ህመም የሌለው ማደንዘዣ",
+                fac3Desc: "በኮምፒውተር የሚቆጣጠር ህመም የሌለው ማደንዘዣ ለጥርስ ማውጣት እና ህክምና።",
+                fac4Title: "የመሳሪያዎች ማፅጃ ክፍል",
+                fac4Desc: "ባለብዙ ደረጃ የክላስ B አውቶክሌቭ ማፅጃ ለታካሚዎች ሙሉ ደህንነት።",
+                btnLearnMore: "ተጨማሪ ያንብቡ",
+                servicesTag: "ሙሉ የጥርስ ህክምና",
+                servicesTitle: "አገልግሎቶች እና ግልጽ ዋጋዎች",
+                servicesSub: "ከፍተኛ ጥራት ያላቸው ህክምናዎች በኢትዮጵያ ብር (ETB) ዋጋ ተመን።",
+                s1Title: "ጥርስ ማንጣት እና ማጽዳት",
+                s1Price: "ከ 3,500 ብር ጀምሮ",
+                s1Desc: "በሌዘር ጥርስን ማፅዳት እና በ45 ደቂቃ ውስጥ የሚያበራ ፈገግታ ማግኘት።",
+                s2Title: "የጥርስ ማስተካከል (Braces/Invisalign)",
+                s2Price: "በምርመራ የሚወሰን",
+                s2Desc: "የብረት፣ የሴራሚክ እና የማይታዩ (Invisalign) የጥርስ ማስተካከያዎች በዶ/ር ሙላት ቀጥታ ቁጥጥር።",
+                s3Title: "የጥርስ ተከላ (Implants)",
+                s3Price: "ከ 22,000 ብር ጀምሮ",
+                s3Desc: "ቋሚ የታይታኒየም ጥርስ ተከላ ከተፈጥሯዊ መልክ እና ሙሉ ጥንካሬ ጋር።",
+                s4Title: "የጥርስ ነርቭ ህክምና",
+                s4Price: "ከ 4,000 ብር ጀምሮ",
+                s4Desc: "የተጎዳን ተፈጥሯዊ ጥርስ በማይክሮስኮፕ እና በህመም አልባ አሰራር ማዳን።",
+                s5Title: "የህፃናት ጥርስ ህክምና",
+                s5Price: "ከ 2,000 ብር ጀምሮ",
+                s5Desc: "ለህፃናት ተስማሚ በሆነ መልኩ የሚሰጥ የጥርስ ምርመራ እና የጉድጓድ ድፍን።",
+                s6Title: "የድንገተኛ ጥርስ ህክምና",
+                s6Price: "24/7 ቅድሚያ",
+                s6Desc: "ለከባድ የጥርስ ህመም ወይም ስብራት አፋጣኝ የአንድ ቀን ህክምና።",
+                btnBookThis: "ይህንን ይምረጡ",
+                btnEmergencyCall: "ደውሉ (+251)",
+                locTag: "ክሊኒካችንን ይጎብኙ",
+                locTitle: "በቦሌ፣ አዲስ አበባ ምቹ ቦታ ላይ እንገኛለን",
+                locAddressTitle: "የክሊኒኩ አድራሻ",
+                locAddressDesc: "ቦሌ መድኃኔዓለም አካባቢ፣ ከኤድና ሞል ጎን፣ 3ኛ ፎቅ - ቢሮ 304፣ አዲስ አበባ፣ ኢትዮጵያ።",
+                locPhoneTitle: "የስልክ መስመሮች",
+                locHoursTitle: "የስራ ሰዓታት",
+                locHours1: "ሰኞ - ቅዳሜ፡ ከጠዋቱ 2:00 - ከሰዓት 1:00",
+                locHours2: "እሁድ፡ ለድንገተኛ ህክምና ብቻ",
+                mapLandmark: "በአቅራቢያ ያሉ ታዋቂ ቦታዎች",
+                mapLandmarkSub: "ኤድና ሞል፣ መድኃኔዓለም ቤተክርስቲያን፣ ሃርመኒ ሆቴል",
+                btnOpenMap: "ካርታ ክፈት",
+                bookTag: "ቀላል የመስመር ላይ ቀጠሮ",
+                bookTitle: "የጥርስ ህክምና ቀጠሮ ያስይዙ",
+                bookSub: "የሚፈልጉትን ህክምና እና ሰዓት ይምረጡ። በአዲስ አበባ የሚገኘው አስተናጋጅ ቡድናችን በስልክ ያረጋግጥልዎታል።",
+                labelName: "ሙሉ ስም *",
+                labelPhone: "ስልክ ቁጥር (+251...) *",
+                labelService: "የህክምና አይነት ይምረጡ *",
+                optSelect: "-- ህክምና ይምረጡ --",
+                labelDate: "የሚፈልጉት ቀን *",
+                labelTime: "የሚፈልጉት ሰዓት *",
+                labelNotes: "ተጨማሪ ማስታወሻ (ካለ)",
+                btnConfirmBooking: "ቀጠሮውን ላክ",
+                footerDesc: "በአዲስ አበባ ከፍተኛ ጥራት ያለው የኦርቶዶንቲክስ እና የጥርስ ህክምና በአውሮፓ የፅዳት ደረጃዎችን ጠብቆ ይሰጣል።",
+                footerQuickLinks: "ፈጣን ማያያዣዎች",
+                footerContact: "የአዲስ አበባ ቢሮ",
+                footerHours: "የስራ ሰዓት",
+                modalBioTitle: "የዶክተር ሙላት የትምህርት እና የልምድ መረጃ",
+                modalBioP1: "ዶክተር ሙላት በጥርስ ህክምና ዶክትሬት (DDS) በማረጋገጫ ከተመረቁ በኋላ በኦርቶዶንቲክስ እና በኮስሞቲክ ጥርስ ተከላ ላይ ከፍተኛ ስልጠና አጠናቀዋል። በአዲስ አበባ ከ15 ዓመታት በላይ በሺዎች የሚቆጠሩ ታካሚዎችን ፈውሰዋል።",
+                modalBioP2: "የኢትዮጵያ የጥርስ ህክምና ማህበር (EDA) አባል ሲሆኑ በአፍሪካ እና በአውሮፓ የሚካሄዱ አለምአቀፍ ስልጠናዎች ላይ በንቃት ይሳተፋሉ።",
+                modalBioAwardsTitle: "ዋና ዋና ሽልማቶች",
+                award1: "የከፍተኛ ኦርቶዶንቲስት የላቀ አገልግሎት ሽልማት – አዲስ አበባ ጤና ቢሮ",
+                award2: "የተረጋገጠ Invisalign ስፔሻሊስት",
+                award3: "የላቀ የሌዘር ጥርስ ህክምና ሰርተፊኬት"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'am' : 'en';
+            document.getElementById('langLabel').textContent = currentLang === 'en' ? 'አማርኛ' : 'English';
+            
+            // Translate all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[currentLang][key]) {
+                    el.textContent = i18n[currentLang][key];
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"; // Example placeholder video
+            modal.classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = "";
+            modal.classList.add('hidden');
+        }
+
+        function openBioModal() {
+            document.getElementById('bioModal').classList.remove('hidden');
+        }
+
+        function closeBioModal() {
+            document.getElementById('bioModal').classList.add('hidden');
+        }
+
+        function openTechModal(type) {
+            const modal = document.getElementById('techModal');
+            const title = document.getElementById('techModalTitle');
+            const desc = document.getElementById('techModalDesc');
+
+            if (type === '3d') {
+                title.textContent = currentLang === 'en' ? '3D Cone Beam CT Scanning' : '3D Cone Beam CT ስካነር';
+                desc.textContent = currentLang === 'en' 
+                    ? 'Our 3D CBCT technology generates crystal-clear 3D images of your jawbone, nerve pathways, and surrounding structures with up to 80% less radiation than conventional CT scans.'
+                    : 'የእኛ 3D CBCT ቴክኖሎጂ የ መንጋጋ አጥንት እና የነርቭ መስመሮችን በ3D ጥራት ያሳያል፤ ከባህላዊ ሲቲ ስካን በ80% ያነሰ ጨረር ይመነጫል።';
+            } else if (type === 'laser') {
+                title.textContent = currentLang === 'en' ? 'Laser Dental Therapy' : 'የሌዘር ጥርስ ህክምና';
+                desc.textContent = currentLang === 'en' 
+                    ? 'State-of-the-art dental laser treatment minimizes bleeding, accelerates healing time, and eliminates the need for uncomfortable surgical drills during soft-tissue procedures.'
+                    : 'ዘመናዊው የሌዘር ህክምና ደም መፍሰስን የሚቀንስ፣ የመዳን ጊዜን የሚያፋጥን እና ድድ ህክምና ላይ ያለ ድምጽ እና ህመም የሚሰራ ነው።';
+            } else if (type === 'anesthesia') {
+                title.textContent = currentLang === 'en' ? 'Computerized Painless Anesthesia' : 'በኮምፒውተር የሚቆጣጠር ህመም የሌለው ማደንዘዣ';
+                desc.textContent = currentLang === 'en' 
+                    ? 'We utilize single-tooth anesthesia systems that deliver anesthetic fluid slowly and steadily below the pain threshold, ensuring complete numbness without facial drooping.'
+                    : 'ይህ ማደንዘዣ ፈሳሹን በዝግታ እና በቀስታ ስለሚሰጥ ምንም አይነት የመርፌ ህመም ሳይሰማዎት ጥርስዎ ሙሉ በሙሉ እንዲደነዝዝ ያደርጋል።';
+            } else {
+                title.textContent = currentLang === 'en' ? 'European Class-B Sterilization Lab' : 'የአውሮፓ ክላስ-ቢ የመሳሪያዎች ማፅጃ ክፍል';
+                desc.textContent = currentLang === 'en' 
+                    ? 'Every single instrument goes through ultrasonic cleaning, pouch sealing, and high-pressure steam autoclave sterilization at 134°C to guarantee zero cross-contamination.'
+                    : 'እያንዳንዱ የሕክምና መሣሪያ በባክቴሪያ ማጥፊያ አልትራሶኒክ እና በ134 ዲግሪ ሴንቲግሬድ የእንፋሎት ማፅጃ ውስጥ ያልፋል።';
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeTechModal() {
+            document.getElementById('techModal').classList.add('hidden');
+        }
+
+        function selectServiceOption(serviceName) {
+            const select = document.getElementById('patientService');
+            select.value = serviceName;
+        }
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('patientName').value;
+            const phone = document.getElementById('patientPhone').value;
+            const service = document.getElementById('patientService').value;
+            const date = document.getElementById('patientDate').value;
+
+            const msgEn = `Thank you ${name}! Your appointment request for ${service} on ${date} has been received. Dr. Mulat Speciality Clinic team in Addis Ababa will call you at ${phone} to confirm.`;
+            const msgAm = `እናመሰግናለን ${name}! ለ${service} የያዙት ቀጠሮ ጥያቄ በ${date} ደርሶናል። በአዲስ አበባ የሚገኘው የዶ/ር ሙላት ክሊኒክ ቡድን በ${phone} ደውሎ ያረጋግጥልዎታል።`;
+
+            alert(currentLang === 'en' ? msgEn : msgAm);
+            document.getElementById('appointmentForm').reset();
+        }
+
+        // Set min date to today for booking
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('patientDate').setAttribute('min', today);
+        });
+    </script>
+</body>
+</html>
